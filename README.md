@@ -1,5 +1,5 @@
 # youtube_converter
-_Status: WIP - Building APIs_
+_Status: WIP - Building APIs_  
 _Last Updated: 10/08/20_  
 _Date Created: 10/07/20_  
 _Author: Bobby Linse_
@@ -7,7 +7,7 @@ ______________________________________________
 ## General Notes
 
 ### Description
-* This application will build an executable that will allow the user to add multiple songs/artists into a GUI,
+This application will build an executable that will allow the user to add multiple songs/artists into a GUI,
 where the application will then query YouTube, download all of the .mp4s into .mp3s at a destination requested by the user
 
 
@@ -38,6 +38,7 @@ ______________________________________________
     * [Google Developers Console](https://console.developers.google.com)
     * [YouTube-Data-API-v3](https://console.developers.google.com)
 * Youtube_dl: lightweight video downloading library for python
+* FFMPEG: binary required for some of the audio conversions
 * PyQT5: Python GUI 
 
 ### Getting Started - Integrations
@@ -46,7 +47,7 @@ ______________________________________________
 2. Activate your Google Cloud account 
     * _Note: This requires a CC, but for this we'll be using the 90-day free trial_
 3. Add the YouTube Data API v3 from the Library tab.
-4. Create an environment file within `/src/sec` called `env.json`
+4. Create an environment file within `/src/sec/` called `env.json`
     * Add your API Key to it
     ```json
     {
@@ -64,14 +65,15 @@ ______________________________________________
     * `source ./src/venv/Scripts/activate`
 
 2. Download your depenedencies:
-    * `pip install --upgrade google-api-python-client google-auth-oauthlib google-auth-httplib2 pyqt5 pyinstaller`
+    * `pip install --upgrade google-api-python-client google-auth-oauthlib google-auth-httplib2`  
+    * `pip install --upgrade pyqt5 pyinstaller`  
     * `pip install youtube-dl`
     * Download [ffmpeg](https://www.ffmpeg.org/download.html)
         * **Note this is currently already in the ./src/bin folder**
     * Set the ffmpeg binary to your path
         * For Windows: Set the bin folder to your path
             * WIN key > Environment Variables > `Path` > Paste the location
-        * Other Option with git & `venv`: Add this line to your venv/Scripts/activate file
+        * Other Option using bash & `venv`: Add this line to your `venv/Scripts/activate` file
             * `export PATH=$PATH:="~\youtube_converter\src\bin\ffmpeg-windows"`
             * Here's an example of where to put it in the activate file:
             ```sh
